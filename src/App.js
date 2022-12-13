@@ -1,11 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
+import Particles from './components/particles';
+import Fetch from './Fetch';
 
 function App() {
   return (
     <div className="App">
+      {/* <Fetch/> */}
+      
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -18,6 +20,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <Particles/>
     </div>
   );
 }
