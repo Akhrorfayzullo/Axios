@@ -19,7 +19,7 @@ const Fetchtest = () => {
         const data = new FormData();
 
         data.append('files', files)
-        axios.post("http://15.164.222.234:3001/upload",{headers:{authorization:token}}, {body:data})
+        axios.post("http://15.164.222.234:3001/upload", {body:data}, {headers:{authorization:token}})
             .then((e) => {
                 console.log("Success");
             })
