@@ -6,6 +6,7 @@ const Signin = () => {
   const [infos, setInfos] = useState("");
   const passRef = useRef();
   const userRef = useRef();
+  const token = localStorage.getItem("token11");
 
   const onSubmit = () => {
     // 52.78.15.205
@@ -28,6 +29,25 @@ const Signin = () => {
         console.log(localStorage.getItem("token11"), "Storage");
       });
   };
+  const logoutSubmit = async () => {
+    try {
+      if (!token) {
+        alert("Already logged out!");
+        return;
+      }
+      let resp = await axios.post(
+        "http://52.78.15.205:3001/users/logout",
+        {},
+        {
+          headers: { Authorization: token },
+        }
+      );
+      localStorage.removeItem("token11");
+      console.log({ resp });
+    } catch (err) {
+      console.log(err);
+    }
+  };
   console.log(passRef?.current?.value);
 
   return (
@@ -36,6 +56,7 @@ const Signin = () => {
       <button onClick={onSubmit}>Submit</button>
       <input ref={passRef} type="password" placeholder="password" />
       <input ref={userRef} type="text" placeholder="nickname" />
+      <button onClick={logoutSubmit}>Logout</button>
       <h1>{infos}</h1>
     </div>
   );

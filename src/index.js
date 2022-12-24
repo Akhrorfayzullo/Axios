@@ -1,28 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import Fetch from './Signin';
-import Fetchtest from './Upload';
-import FileUpload from './Useless/Useless';
-import Download from './Download';
-import Partcles from "./components/particles"
-import Signup from './Signup';
-import Signin from './Signin';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import Fetch from "./Signin";
+import Fetchtest from "./Upload";
+import FileUpload from "./Useless/Useless";
+import _Download from "./components/_Download";
+import Partcles from "./components/particles";
+import Signup from "./Signup";
+import Signin from "./Signin";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
-    <Signup/>
-    <Signin/>
+    <Signup />
+    <Signin />
     {/* <FileUpload/> */}
-    <Fetchtest/>
-    <br/><hr/>
-    <Download/>
+    <Fetchtest />
+    <br />
+    <hr />
+    <_Download />
     {/* <Partcles/> */}
-
   </React.StrictMode>
 );
 

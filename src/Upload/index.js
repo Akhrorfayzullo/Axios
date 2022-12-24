@@ -24,6 +24,7 @@ const Fetchtest = () => {
       .then((e) => {
         console.log("Success");
         console.log(token);
+        window.location.reload();
       })
       .catch((e) => {
         console.error("error");
