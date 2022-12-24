@@ -8,7 +8,6 @@ const Fetchtest = () => {
   // let formData = new FormData()
 
   const onChange = (e) => {
-    // console.log(e.target.files);
     setfile(e.target.files[0]);
     setfileName(e.target.files[0].name);
   };
@@ -17,17 +16,21 @@ const Fetchtest = () => {
     const formData = new FormData();
     formData.append("file", file);
 
-    await axios
-      .post("http://52.78.15.205:3001/upload", formData, {
-        headers: { authorization: token },
-      })
-      .then((e) => {
-        console.log("Success");
-        console.log(token);
-      })
-      .catch((e) => {
-        console.error("error");
+    let resp = await axios.post("http://52.78.15.205:3001/upload", formData, {
+      headers: { authorization: token },
+    });
+    console.log({ resp });
+  };
+
+  const onDownload = async () => {
+    try {
+      let resp = await axios.get("http://52.78.15.205:3001/my/files", {
+        headers: { Authorization: token },
       });
+      console.log(resp);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -40,6 +43,11 @@ const Fetchtest = () => {
         </div>
         <input type="submit" value="Upload" />
       </form>
+
+      <div>
+        <h1 style={{ color: "red" }}>Download</h1>
+        <button onClick={() => onDownload()}>Download</button>
+      </div>
       {/* <button onClick={test}>press</button> */}
     </Fragment>
   );

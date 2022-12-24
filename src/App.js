@@ -1,26 +1,16 @@
-import './App.css';
-import Particles from './components/particles';
-import Fetch from './Signin';
+import "./App.css";
+import React from "react";
+import Fetchtest from "./Upload";
+import Signup from "./Signup";
+import Signin from "./Signin";
 
 function App() {
   return (
     <div className="App">
-      {/* <Fetch/> */}
-      
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      
+      <Signup />
+      <Signin />
+      <Fetchtest />
+      <br />
     </div>
   );
 }
